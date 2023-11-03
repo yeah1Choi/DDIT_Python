@@ -1,6 +1,6 @@
 # pyqt를 이용하여 클릭하면 파일을 선택할 수 있는 창을 여는 코드
 import sys
-from PyQt5 import uic
+from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.Qt import QPushButton
 
@@ -18,7 +18,8 @@ class MainClass(QMainWindow, form_class) :
                 btn = QPushButton("", self)
                 btn.resize(40,40)
                 btn.move(40*i, 40*j)
-                btn.setStyleSheet('border-image:url(./images/0.png);border:0px;')
+                btn.setIcon(QtGui.QIcon('images/0.png')) 
+                btn.setIconSize(QtCore.QSize(40,40))
         
         self.resize(400, 400)
         self.show()   
