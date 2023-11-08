@@ -4,7 +4,7 @@ from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.Qt import QPushButton
 
-form_class = uic.loadUiType("myOmok03.ui")[0]
+form_class = uic.loadUiType("myOmok04_19.ui")[0]
 
 # 클래스 파라미터 값 안에 들어있는건 상속을 받아올 클래스들
 class MainClass(QMainWindow, form_class) :
@@ -13,24 +13,35 @@ class MainClass(QMainWindow, form_class) :
         self.flag = True
         self.flagOver = False
         self.arr2D = [
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-                        
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0],
-            [0,0,0,0,0, 0,0,0,0,0]
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+                       
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+                       
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0],
+            [0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0,  0,0,0,0]
         ]
         self.pb2D = []
         self.setupUi(self)
         
-        for i in range(10):
+        for i in range(19):
             line = []
-            for j in range(10):
+            for j in range(19):
                 pb = QPushButton("", self)
                 pb.setToolTip("{},{}".format(i,j))
                 pb.setIcon(QtGui.QIcon('images/0.png')) 
@@ -41,15 +52,14 @@ class MainClass(QMainWindow, form_class) :
             self.pb2D.append(line)
         
         self.pbReset.clicked.connect(self.myreset)
-            
-                
+                  
         self.show()  
-        self.myrender();
+        self.myrender()
     
     # 초기화 버튼 이벤트
     def myreset(self):
-        for i in range(10):
-            for j in range(10):
+        for i in range(19):
+            for j in range(19):
                 self.arr2D[i][j] = 0
                 
         self.myrender()
@@ -59,8 +69,8 @@ class MainClass(QMainWindow, form_class) :
     
     # 렌더링 함수 : 배열의 값을 가져가 화면에 출력하게 만드는 함수
     def myrender(self):
-        for i in range(10):
-            for j in range(10):
+        for i in range(19):
+            for j in range(19):
                 if self.arr2D[i][j] == 0:
                     self.pb2D[i][j].setIcon(QtGui.QIcon('images/0.png'))
                 

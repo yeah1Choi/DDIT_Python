@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>799</width>
-    <height>685</height>
+    <width>900</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,8 +23,8 @@
    <widget class="QPushButton" name="pbReset">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>20</y>
+      <x>810</x>
+      <y>10</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -39,7 +39,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>799</width>
+     <width>900</width>
      <height>21</height>
     </rect>
    </property>
