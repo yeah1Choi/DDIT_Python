@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+th, td {
+	padding: 10px 30px;
+	text-align: center;
+}
+th {
+	background: #000;
+	color: #fff;
+}
+</style>
+<script type="text/javascript">
+	function fn_add_act(){
+		document.frm.submit();
+	}
+</script>
+</head>
+<body>
+	<h1>MEM_INSERT</h1>
+	<form name="frm" action="mem_add_act" method="post">
+	{% csrf_token %}
+		<table border="1">
+			<tr>
+				<th>회원번호</th>
+				<td> <input type="text" name="m_id"> </td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td> <input type="text" name="m_name"> </td>
+			</tr>
+			<tr>
+				<th>연락처</th>
+				<td> <input type="text" name="tel"> </td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td> <input type="text" name="email"> </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="저장" onclick="fn_add_act()"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

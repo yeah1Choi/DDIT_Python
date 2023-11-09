@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
 import pymysql
+from HELLO_DJANGO import daoemp
+from HELLO_DJANGO.daoemp import DaoEmp
 
 def index(request):
     return HttpResponse("Hello Django!")
@@ -32,24 +34,9 @@ def forw(request):
     return render(request, 'forw.html', {'a' : a, 'b' : b, 'c' : c})
 
 def emp(request):
-    conn = pymysql.connect(
-        host='127.0.0.1',
-        user='root', 
-        password='python', 
-        db='python', 
-        charset='utf8',
-        port = 3305
-    )
-    cur = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select * from emp"
-    cur.execute(sql)
+    de = DaoEmp()
+    list = de.selectList()
     
-    emps = cur.fetchall()
-    print(emp)
-    
-    connection.commit()
-    connection.close()
-    
-    return render(request, 'emp.html', {'emps' : emps})
+    return render(request, 'emp.html', {'list' : list})
 
 
