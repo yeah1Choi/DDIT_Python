@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var btn = document.getElementsByClassName('btn');
+	var btn_call = document.getElementsByClassName('btn_call')[0];
+	var text = document.querySelector('#it');
+
+	console.log(btn);
+	
+	for(var i=0; i < 10; i++){
+		btn[i].addEventListener("click", function(event) {
+			var newtxt = this.value;
+			var oldtxt = text.value;
+			text.value = oldtxt + newtxt;
+		});
+    }
+	
+	btn_call.addEventListener("click", function(event) {
+		var tel = text.value;
+		alert("calling to "+tel);
+	});
+}
+
+</script>
+</head>
+<body>
+<h3>JS07</h3>
+<table border="1">
+	<tr>
+		<td colspan="3"> <input type="text" id="it"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="btn" value="1"> </td>
+		<td> <input type="button" class="btn" value="2"> </td>
+		<td> <input type="button" class="btn" value="3"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="btn" value="4"> </td>
+		<td> <input type="button" class="btn" value="5"> </td>
+		<td> <input type="button" class="btn" value="6"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="btn" value="7"> </td>
+		<td> <input type="button" class="btn" value="8"> </td>
+		<td> <input type="button" class="btn" value="9"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="btn" value="0"> </td>
+		<td colspan="2"> <input type="button" class="btn_call" value="☎"> </td>
+	</tr>
+</table>
+</body>
+</html>

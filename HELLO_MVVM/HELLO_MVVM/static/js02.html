@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input[type='text'] {
+	width: 30px;	
+}
+</style>
+<script type="text/javascript">
+function myclick(){
+	var num1 = parseInt(document.getElementsByName("ita")[0].value);
+	var num2 = parseInt(document.getElementsByName("itb")[0].value);
+	
+	var num3 = num1 + num2;
+	
+	document.getElementsByName("itc")[0].value = num3;
+}
+</script>
+</head>
+<body>
+<h3>JS02</h3>
+<input type="text" name="ita"/>
++
+<input type="text" name="itb"/>
+
+<input type="button" value="="  onclick="myclick()"/>
+
+<input type="text" name="itc"/>
+</body>
+</html>
