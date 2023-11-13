@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+input[type='text'] {
+	width: 30px;	
+}
+</style>
+<script type="text/javascript">
+function myclick(){
+	var num1 = parseInt($("input[name='ita']").val());
+	var num2 = parseInt($("input[name='itb']").val());
+	
+	var num3 = num1 + num2;
+	
+	$("input[name='itc']").val(num3)
+}
+
+$(document).ready(function(){
+	$("#btn").bind("click", function (event) {
+		myclick();
+    });
+});
+</script>
+</head>
+<body>
+<h3>JQ02</h3>
+<input type="text" name="ita"/>
++
+<input type="text" name="itb"/>
+
+<input type="button" value="="  id="btn"/>
+
+<input type="text" name="itc"/>
+</body>
+</html>

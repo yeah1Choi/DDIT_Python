@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+input[type='text']{
+	width: 30px;
+}
+div {
+	padding: 20px;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#btn").on("click", function (event) {
+        myClick();
+	});
+    
+    function getStar(cnt){
+    	var ret = "";
+    	for(var i=0;i<cnt;i++){
+    		ret += "★";
+    	}
+    	ret += "<br/>";
+    	return ret;
+    }
+
+    function myClick() {
+    	var obj_fir = parseInt($("#it_first").val());
+    	var obj_las = parseInt($("#it_last").val());
+
+        var str = "";
+        for(var i = obj_fir; i <= obj_las; i++){
+    		str += getStar(i);
+    	}
+
+        $("#mydiv").html(str);
+    }
+});
+</script>
+</head>
+<body>
+<h3>JQ05</h3>
+<table border="1">
+	<tr>
+		<td>시작 별수 : </td>
+		<td> <input type="text" id="it_first"> </td>
+	</tr>
+	<tr>
+		<td>끝 별수 : </td>
+		<td> <input type="text" id="it_last"> </td>
+	</tr>
+	<tr>
+		<td colspan="2"> 
+			<input type="button" value="출력하기" id="btn">	
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"> 
+			<div id="mydiv"></div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

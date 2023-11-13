@@ -9,7 +9,7 @@ table {
 }
 </style>
 <script type="text/javascript">
-window.onload = function(){
+/* window.onload = function(){
 	var btn = document.getElementsByClassName('btn');
 	var btn_call = document.getElementsByClassName('btn_call')[0];
 	var text = document.querySelector('#it');
@@ -28,8 +28,22 @@ window.onload = function(){
 		var tel = text.value;
 		alert("calling to "+tel);
 	});
+} */
+function myclick(obj){
+	var obj_it = document.getElementById("it");
+	
+	var str_new = obj.value;
+	var str_old = obj_it.value;
+	
+	obj_it.value = str_old + str_new;
+	
 }
-
+function mycall(){
+	var obj_it = document.getElementById("it");
+	var str_tel = obj_it.value;
+	
+	alert("Calling to "+str_tel);
+}
 </script>
 </head>
 <body>
@@ -39,23 +53,23 @@ window.onload = function(){
 		<td colspan="3"> <input type="text" id="it"> </td>
 	</tr>
 	<tr>
-		<td> <input type="button" class="btn" value="1"> </td>
-		<td> <input type="button" class="btn" value="2"> </td>
-		<td> <input type="button" class="btn" value="3"> </td>
+		<td> <input type="button" class="btn" value="1" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="2" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="3" onclick="myclick(this)"> </td>
 	</tr>
 	<tr>
-		<td> <input type="button" class="btn" value="4"> </td>
-		<td> <input type="button" class="btn" value="5"> </td>
-		<td> <input type="button" class="btn" value="6"> </td>
+		<td> <input type="button" class="btn" value="4" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="5" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="6" onclick="myclick(this)"> </td>
 	</tr>
 	<tr>
-		<td> <input type="button" class="btn" value="7"> </td>
-		<td> <input type="button" class="btn" value="8"> </td>
-		<td> <input type="button" class="btn" value="9"> </td>
+		<td> <input type="button" class="btn" value="7" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="8" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="btn" value="9" onclick="myclick(this)"> </td>
 	</tr>
 	<tr>
-		<td> <input type="button" class="btn" value="0"> </td>
-		<td colspan="2"> <input type="button" class="btn_call" value="☎"> </td>
+		<td> <input type="button" class="btn" value="0" onclick="myclick(this)"> </td>
+		<td colspan="2"> <input type="button" class="btn_call" value="☎" onclick="mycall()"> </td>
 	</tr>
 </table>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function myclick(){
+	$("#str").html("Good Evening");
+	/* 바꾸는 함수에는 html, text, val이 있다 */
+}
+
+$(document).ready(function(){
+	console.log("hi-ready");
+	
+	$("#btn").bind("click", function (event) {
+		myclick();
+    });
+});
+</script>
+</head>
+<body>
+ <h1>JQ01</h1>
+<div id="str">Good Morning</div>
+<input type="button" value="CLICK" id="btn" />
+</body>
+</html>
