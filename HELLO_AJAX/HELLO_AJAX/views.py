@@ -37,9 +37,20 @@ def ajax_insert(request):
     de = DaoEmp()
     cnt = de.insert(e_id, e_name, gen, addr)
 
-    json = {
-        'cnt': cnt
-    }
+# controller에서 직접 list 함수 호출도 가능하고
+# view에서 이런 식으로 직접 미리 작성도 가능하다.
+    json = None;
+    list = None;
+    if cnt == 1 :
+        list = de.selectlist()
+        json = {
+            'list' : list,
+            'cnt': cnt
+        }
+    else :
+        json = {
+            'cnt': cnt
+        }
     return JsonResponse(json)
 
 @csrf_exempt
@@ -66,6 +77,18 @@ def ajax_delete(request):
 
     json = {
         'cnt': cnt
+    }
+    return JsonResponse(json)
+
+@csrf_exempt
+def ajax_select(request):
+    e_id = request.POST['e_id']
+    
+    de = DaoEmp()
+    vo = de.selectOne(e_id)
+
+    json = {
+        'vo': vo
     }
     return JsonResponse(json)
 

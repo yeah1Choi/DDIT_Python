@@ -21,6 +21,7 @@ from HELLO_AJAX import views
 urlpatterns = [
     path('ajax', views.ajax),
     path('selectlist.ajax', views.ajax_selectlist),
+    path('select.ajax', views.ajax_select),
     path('insert.ajax', views.ajax_insert),
     path('update.ajax', views.ajax_update),
     path('delete.ajax', views.ajax_delete),
